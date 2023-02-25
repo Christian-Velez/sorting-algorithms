@@ -17,10 +17,6 @@ const baseColor = '#BEE3F8'
 const accentColor = '#63B3ED'
 const offColor = '#333'
 
-function randomNum(min, max) {
-   return Math.round(Math.random() * (max - min) + min)
-}
-
 function createRandomArray() {
    for (let i = 0; i < numOfBars; i++) {
       unsortedArray[i] = randomNum(minRange, maxRange)
@@ -59,7 +55,7 @@ function resetBarsColor() {
    }
 }
 
-async function bubleSort(array) {
+async function bubbleSort(array) {
    const bars = document.getElementsByClassName('bar')
 
    let i = 0
@@ -105,7 +101,7 @@ async function bubleSort(array) {
    return array
 }
 
-async function insertSort(array) {
+async function insertionSort(array) {
    const lastPos = array.length - 1
    const sortedColor = 'green'
    const bars = document.getElementsByClassName('bar')
@@ -146,7 +142,7 @@ async function insertSort(array) {
    }
 }
 
-async function selectSort(array) {
+async function selectionSort(array) {
    const lastPos = array.length - 1
    const candidateColor = '#F56565'
    const bars = document.getElementsByClassName('bar')
@@ -219,14 +215,15 @@ sortBtn.addEventListener('click', async () => {
 
    switch (method) {
       case 'bubble':
-         await bubleSort(unsortedArray)
-         break
-      case 'insert':
-         await insertSort(unsortedArray)
+         await bubbleSort(unsortedArray)
          break
 
-      case 'select':
-         await selectSort(unsortedArray)
+      case 'insertion':
+         await insertionSort(unsortedArray)
+         break
+
+      case 'selection':
+         await selectionSort(unsortedArray)
          break
 
       default:

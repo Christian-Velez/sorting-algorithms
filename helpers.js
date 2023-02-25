@@ -5,3 +5,7 @@ async function sleep(timems) {
       }, timems)
    })
 }
+
+function randomNum(min, max) {
+   return Math.round(Math.random() * (max - min) + min)
+}
