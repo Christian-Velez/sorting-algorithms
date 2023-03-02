@@ -15,7 +15,7 @@ let sleepBetweenSwaps = 25
 
 const baseColor = '#BEE3F8'
 const accentColor = '#63B3ED'
-const offColor = '#333'
+const offColor = '#F7FAFC'
 
 function createRandomArray() {
    for (let i = 0; i < numOfBars; i++) {
@@ -144,7 +144,8 @@ async function insertionSort(array) {
 
 async function selectionSort(array) {
    const lastPos = array.length - 1
-   const candidateColor = '#F56565'
+   const smallestColor = '#F56565'
+   const candidateColor = '#B794F4'
    const bars = document.getElementsByClassName('bar')
 
    let candidatePosition = 0
@@ -161,7 +162,7 @@ async function selectionSort(array) {
                setBarColor(smallest, offColor)
             }
 
-            setBarColor(i, accentColor)
+            setBarColor(i, smallestColor)
             smallest = i
          }
          await sleep(sleepBetweenSwaps)
